@@ -1,0 +1,8 @@
+<resources>
+	
+	<integer name="peon">26</integer>
+	<integer name="archer">13</integer>
+	<integer name="pikeman">67</integer>
+	<integer name="giant">100</integer>
+
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string-array name="units">
+        <item>Peons</item>
+        <item>Archers</item>
+        <item>Pikemen</item>
+        <item>Giants</item>
+    </string-array>
+</resources>
