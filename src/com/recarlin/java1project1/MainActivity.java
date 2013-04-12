@@ -1,5 +1,10 @@
+/*
+ * project		Java1Project1
+ * package		com.recarlin.java1project1
+ * author		Russell Carlin
+ * date			Apr 11, 2013
+ */
 package com.recarlin.java1project1;
-
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -24,17 +29,19 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		/*Sets the linear layout up.*/
 		LinearLayout lay = new LinearLayout(this);
 		lay.setOrientation(LinearLayout.VERTICAL);
 		LinearLayout.LayoutParams par = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
 		lay.setLayoutParams(par);
 		
+		/*Sets up a title text view.*/
 		TextView title = new TextView(this);
 		title.setText("Build your army!");
 		title.setTextSize(40);
 		
+		/*Sets up a nested view with an EditText and TextField for the first unit.*/
 		LinearLayout.LayoutParams par2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-		
 		LinearLayout peonLay = new LinearLayout(this);
 		peonLay.setOrientation(LinearLayout.HORIZONTAL);
 		peonLay.setLayoutParams(par2);
@@ -47,6 +54,7 @@ public class MainActivity extends Activity {
 		peonLay.addView(peonCount);
 		peonLay.addView(peon);
 		
+		/*Sets up a nested view with an EditText and TextField for the second unit.*/
 		LinearLayout archerLay = new LinearLayout(this);
 		archerLay.setOrientation(LinearLayout.HORIZONTAL);
 		archerLay.setLayoutParams(par2);
@@ -59,6 +67,7 @@ public class MainActivity extends Activity {
 		archerLay.addView(archerCount);
 		archerLay.addView(archer);
 		
+		/*Sets up a nested view with an EditText and TextField for the third unit.*/
 		LinearLayout pikemenLay = new LinearLayout(this);
 		pikemenLay.setOrientation(LinearLayout.HORIZONTAL);
 		pikemenLay.setLayoutParams(par2);
@@ -71,6 +80,7 @@ public class MainActivity extends Activity {
 		pikemenLay.addView(pikemenCount);
 		pikemenLay.addView(pikemen);
 		
+		/*Sets up a nested view with an EditText and TextField for the fourth unit.*/
 		LinearLayout giantLay = new LinearLayout(this);
 		giantLay.setOrientation(LinearLayout.HORIZONTAL);
 		giantLay.setLayoutParams(par2);
@@ -83,6 +93,7 @@ public class MainActivity extends Activity {
 		giantLay.addView(giantCount);
 		giantLay.addView(giant);
 		
+		/*Sets up a nested view with an EditText and TextField for the currnet gold*/
 		LinearLayout goldLay = new LinearLayout(this);
 		goldLay.setOrientation(LinearLayout.HORIZONTAL);
 		goldLay.setLayoutParams(par2);
@@ -95,6 +106,7 @@ public class MainActivity extends Activity {
 		goldLay.addView(goldCount);
 		goldLay.addView(gold);
 		
+		/*Sets up a button, with click listener. Listener will perform the calculations the app is designed to do.*/
 		Button checkButton = new Button(this);
 		checkButton.setText("Do I Have Enough Gold?");
 		checkButton.setOnClickListener(new View.OnClickListener() {
@@ -116,11 +128,12 @@ public class MainActivity extends Activity {
 				}
 			}
 		});
-		
+		/*Sets up a text view for the results.*/
 		result = new TextView(this);
 		result.setText("Results Shown Here");
 		result.setTextSize(25);
 		
+		/*Adds all of the views to the main view.*/
 		lay.addView(title);
 		lay.addView(peonLay);
 		lay.addView(archerLay);
@@ -131,7 +144,7 @@ public class MainActivity extends Activity {
 		lay.addView(result);
 		setContentView(lay);
 	}
-
+	/*This function is performed after all the calculations are done. It changes the result text view to one of two strings.*/
 	private void finishHim() {
 		if (affordable == false) {
 			result.setText("You cannot afford that army!");
