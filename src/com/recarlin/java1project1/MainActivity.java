@@ -3,6 +3,7 @@ package com.recarlin.java1project1;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -39,6 +40,7 @@ public class MainActivity extends Activity {
 		peonLay.setLayoutParams(par2);
 		peonCount = new EditText(this);
 		peonCount.setHint("Type quantity");
+		peonCount.setInputType(InputType.TYPE_CLASS_NUMBER);
 		TextView peon = new TextView(this);
 		peon.setText("Peons");
 		peon.setTextSize(25);
@@ -50,6 +52,7 @@ public class MainActivity extends Activity {
 		archerLay.setLayoutParams(par2);
 		archerCount = new EditText(this);
 		archerCount.setHint("Type quantity");
+		archerCount.setInputType(InputType.TYPE_CLASS_NUMBER);
 		TextView archer = new TextView(this);
 		archer.setText("Archers");
 		archer.setTextSize(25);
@@ -61,6 +64,7 @@ public class MainActivity extends Activity {
 		pikemenLay.setLayoutParams(par2);
 		pikemenCount = new EditText(this);
 		pikemenCount.setHint("Type quantity");
+		pikemenCount.setInputType(InputType.TYPE_CLASS_NUMBER);
 		TextView pikemen = new TextView(this);
 		pikemen.setText("Pikemen");
 		pikemen.setTextSize(25);
@@ -72,6 +76,7 @@ public class MainActivity extends Activity {
 		giantLay.setLayoutParams(par2);
 		giantCount = new EditText(this);
 		giantCount.setHint("Type quantity");
+		giantCount.setInputType(InputType.TYPE_CLASS_NUMBER);
 		TextView giant = new TextView(this);
 		giant.setText("Giants");
 		giant.setTextSize(25);
@@ -83,6 +88,7 @@ public class MainActivity extends Activity {
 		goldLay.setLayoutParams(par2);
 		goldCount = new EditText(this);
 		goldCount.setHint("Type quantity");
+		goldCount.setInputType(InputType.TYPE_CLASS_NUMBER);
 		TextView gold = new TextView(this);
 		gold.setText("Current Gold");
 		gold.setTextSize(25);
@@ -94,7 +100,6 @@ public class MainActivity extends Activity {
 		checkButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				
 				int peonCost = Integer.parseInt(peonCount.getText().toString()) * getResources().getInteger(R.integer.peon);
 				int archerCost = Integer.parseInt(archerCount.getText().toString()) * getResources().getInteger(R.integer.archer);
 				int pikemenCost = Integer.parseInt(pikemenCount.getText().toString()) * getResources().getInteger(R.integer.pikeman);
@@ -109,7 +114,6 @@ public class MainActivity extends Activity {
 					affordable = true;
 					finishHim();
 				}
-				
 			}
 		});
 		
